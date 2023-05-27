@@ -1,0 +1,154 @@
+$linked_blue: #0072b1;
+$linked_blue1: #0073b1;
+$linked_blue2: #045e8e;
+
+.login-btn {
+  font-weight: 600;
+  color: #ffffff;
+  cursor: pointer;
+  width: 385px;
+  height: 50px;
+  // padding: 12px;
+  border: 1px solid black;
+  outline: none;
+  font-size: 18px;
+  border-radius: 50px;
+  margin-top: 20px;
+  background-color: $linked_blue1;
+}
+
+.login-btn:hover {
+  background-color: $linked_blue2;
+  transition: 0.2s;
+}
+
+.auth-inputs {
+  // width: 710px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.head {
+  // background-color: #0073b1;
+  // width: 100%;
+  // text-align: center;
+
+}
+
+.auth-inputs input {
+  color: black;
+  padding: 10px;
+  font-size: 18px;
+  background-color: white;
+  // border: none;
+  border-radius: 3px;
+  outline: none;
+  border: 1px solid black;
+  height: 30px;
+  width: 350px;
+  margin: 10px 0;
+}
+
+.common-input:focus {
+
+  outline: 1px solid $linked_blue;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  //   background-color: aqua;
+}
+
+.login-wrapper {
+  background-color: white;
+
+  .heading {
+    // text-align: center;
+    // margin-left: 200px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.9);
+  }
+
+  .sub-heading {
+    // margin-left: 200px;
+    margin-top: -20px;
+  }
+}
+
+.linkedin_logo {
+  width: 60px;
+  margin-left: 20px;
+
+}
+
+
+.hr-text {
+  line-height: 1em;
+  position: relative;
+  outline: 0;
+  border: 0;
+  color: black;
+  text-align: center;
+  height: 1.5em;
+  opacity: .5;
+
+  &:before {
+    content: '';
+    // use the linear-gradient for the fading effect
+    // use a solid background color for a solid bar
+    background: linear-gradient(to right, transparent, #818078, transparent);
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 1px;
+  }
+
+  &:after {
+    content: attr(data-content);
+    position: relative;
+    display: inline-block;
+    color: black;
+
+    padding: 0 .5em;
+    line-height: 1.5em;
+    // this is really the only tricky part, you need to specify the background color of the container element...
+    color: #5f5e5a;
+    background-color: #fcfcfa;
+  }
+}
+
+.ggl-btn {
+  // width: 300px;
+  // background-color: #045e8e;
+}
+
+.ggl-btn .gbtn {
+  width: 370px !important;
+  border-radius: 40px !important;
+  background-color: white !important;
+  color: black !important;
+  border: 1px solid black !important;
+  // padding: 1px !important;
+
+
+}
+
+.ask {
+  display: flex;
+  // width: 600px;
+  margin-top: 30px;
+  font-size: 16px;
+  justify-content: center;
+  // align-items: ;
+}
+
+.j-n {
+  color: $linked_blue;
+}

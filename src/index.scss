@@ -1,0 +1,50 @@
+// @import url('./components/common/common.scss');
+$linked_blue: #0072b1;
+$linked_blue1: #0073b1;
+$linked_blue2: #045e8e;
+
+:root {
+
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: #212121;
+  background-color: rgba(255, 255, 255, 0.87);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+.common-input {
+  color: black;
+  padding: 10px;
+  font-size: 18px;
+  background-color: white;
+  // border: none;
+  border-radius: 3px;
+  outline: none;
+  border: 1px solid black;
+  height: 30px;
+  // width: 350px;
+  margin: 10px 0;
+}
+
+.common-input:focus {
+
+  outline: 1px solid $linked_blue;
+}
+
+.common-textarea {
+  color: black;
+  padding: 10px;
+  font-size: 18px;
+  background-color: white;
+  // border: none;
+  border-radius: 3px;
+  outline: none;
+  border: 1px solid black;
+}

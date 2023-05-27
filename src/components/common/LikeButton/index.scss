@@ -1,0 +1,118 @@
+$linked_blue: #0072b1;
+$linked_blue1: #0073b1;
+$linked_blue2: #045e8e;
+.like-cont {
+//     display: flex;
+//     // align-items: center;
+//     justify-content:center;
+// flex-direction:column;
+//     gap: 10px;
+    padding: 7px 10px;
+    cursor: pointer;
+
+    p {
+        
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-weight: 400;
+        color: grey;
+        font-size: 14px;
+        
+    }
+    hr{
+        border:0.1px solid #0072b1;
+    }
+    .reply-cont{
+        margin-top:20px;
+        display:flex;
+        gap:300px;
+        // justify-content:space-between;
+        align-items:center;
+    .like-cont2{
+        display:flex;
+        gap:4px;
+        // margin-top:-10px;
+        
+
+
+        .blue{
+            color:#0072b1;
+
+        }
+    }
+    
+    .comment{
+        display:flex;
+        // justify-content:center
+        .blue{
+            color:#0072b1;
+            
+        }}
+    }
+    
+    
+    
+    
+    .cmt-box{
+        display:flex;
+        flex-direction:column;
+        // align-items:center;
+    gap:10px;
+.input{
+    margin-top:10px;
+    height:40px;
+    width:100%;
+    background-color:whitesmoke;
+    outline:none;
+    color:black;
+    border:1px solid grey;
+    border-radius:30px;
+    padding-left:12px;
+
+
+    
+    
+}
+.all-comments{
+    margin-top:7px;
+    display:flex;
+    flex-direction:column;
+gap:5px;
+}
+.name1{
+    font-weight:500;
+    color:black;
+    font-size:15px;
+}
+.comment{
+
+}
+.timestamp{
+    font-size:11px;
+    right:10px;
+    font-weight:500;
+    position:absolute;
+}
+.single-comment{
+    position:relative;
+    border-radius:10px;
+    padding:10px;
+    display:flex;
+    flex-direction:column;
+    background-color:rgb(208,208,208);
+
+}
+.input:focus{
+    border:2px solid black;
+    color:black;
+}
+.save-cmt{
+    width:150px;
+    height:40px;
+    background-color:#0072b1;
+    color:white;
+    border:1px solid grey;
+}
+}}
+.hide{
+    display:none
+}
