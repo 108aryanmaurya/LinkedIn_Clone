@@ -3,7 +3,8 @@ import {
   addDoc,
   collection,
   onSnapshot,
-  doc,deleteDoc,
+  doc,
+  deleteDoc,
   updateDoc,
   query,
   where,
@@ -29,6 +30,15 @@ export const postStatus = (data) => {
 export const getStatus = (setallstatus) => {
   onSnapshot(dbref, (response) => {
     setallstatus(
+      response.docs.map((docs) => {
+        return { ...docs.data(), id: docs.id };
+      })
+    );
+  });
+};
+export const getallusers = (setallusers) => {
+  onSnapshot(useref, (response) => {
+    setallusers(
       response.docs.map((docs) => {
         return { ...docs.data(), id: docs.id };
       })
@@ -100,70 +110,73 @@ export const getSingleUser = (setcurrentProfile, email) => {
   // //console.log("user");
 };
 
-export const likepost = (userid, postid,liked) => {
+export const likepost = (userid, postid, liked) => {
   // console.log(userid, postid);
   try {
     // console.log("i work")
     // console.log(liked)
     let docToLike = doc(likeref, `${userid}_${postid}}`);
-    if(liked)
-    {
-      deleteDoc(docToLike)
-    }
-    else{
-    setDoc(docToLike, { userid, postid });
+    if (liked) {
+      deleteDoc(docToLike);
+    } else {
+      setDoc(docToLike, { userid, postid });
     }
   } catch (error) {
     console.log(error);
   }
 };
 
-export const getLikes = (postid,userid,setliked,setlikecount) => {
+export const getLikes = (postid, userid, setliked, setlikecount) => {
   try {
     let likequery = query(likeref, where("postid", "==", postid));
     onSnapshot(likequery, (response) => {
       let likes = response.docs.map((doc) => doc.data());
       console.log(likes);
-      
-      let likescount=likes?.length
-      
-      const islike=likes.some((like)=>{
-      return  like.userid===userid;
-    })
-    setlikecount(likescount)
-    setliked(islike)
-    // console.log(islike+"islike")
-    // console.log(likequery);
-  });
-} catch (error) {
-  console.log(error);
-}
+
+      let likescount = likes?.length;
+
+      const islike = likes.some((like) => {
+        return like.userid === userid;
+      });
+      setlikecount(likescount);
+      setliked(islike);
+      // console.log(islike+"islike")
+      // console.log(likequery);
+    });
+  } catch (error) {
+    console.log(error);
+  }
 };
 
-
-export const postcomment=(postId,data,commentor,timestamp,setgetcomment)=>{
+export const postcomment = (
+  postId,
+  data,
+  commentor,
+  timestamp,
+  setgetcomment
+) => {
   try {
-    addDoc(commentref,{postId,data,timestamp,commentor}).then((setgetcomment("")
-      ))
+    addDoc(commentref, { postId, data, timestamp, commentor }).then(
+      setgetcomment("")
+    );
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
-}
+};
 
-
-export const GetComments=(postid,setallcomments)=>{
+export const GetComments = (postid, setallcomments) => {
   try {
-    let singlePostQuery=query(commentref,where('postId','==',postid))
-    onSnapshot(singlePostQuery,(response)=>{
-      const comments=response.docs.map((doc)=>{
+    let singlePostQuery = query(commentref, where("postId", "==", postid));
+    onSnapshot(singlePostQuery, (response) => {
+      const comments = response.docs.map((doc) => {
         return {
-          id:doc.id,
+          id: doc.id,
           ...doc.data(),
-        }
-      })
-      setallcomments(comments)
-    })
+        };
+      });
+      setallcomments(comments);
+    });
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
-} 
+};
